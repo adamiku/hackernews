@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import App from './app';
+import App from './initApp';
 
 jest.mock('./shared/components/topbar.tsx', () => ({
     default: () => <div data-testid="topbar-component">Mock TopBar</div>,
