@@ -16,7 +16,6 @@ export default defineConfig(({ mode }) => {
     );
     return {
         define: envWithProcessPrefix,
-        base: '/hackernews/',
         plugins: [react()],
         resolve: {
             alias: {
