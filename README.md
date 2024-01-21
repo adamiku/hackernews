@@ -23,6 +23,23 @@ Currently, two official plugins are available:
 -   Deployed to Github Pages
 -   Used githooks with husky to automate processes like linting, testing, conventional commit forcing
 
+## Improvements for the product
+
+-   THE most important Light / Dark mode :)
+-   implement proper navigation for other pages like comments/past/ask
+-   implement authentication
+-   add search functionality
+-   social media sharing
+
+## Improvements for the codebase
+
+-   identify and cover the core functionalities with E2E tests (happy paths)
+-   increase testing coverage and check coverage after each commit, write integration tests
+-   create storybook for UI component and mix it with unit tests [link](https://storybook.js.org/docs/react/writing-tests/stories-in-unit-tests)
+-   use Suspense and lazy load for heavy components
+-   create a Contribute.md to highlight how someone can contribute to the project
+-   add client side logging like [Sentry](https://sentry.io/welcome/)
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
