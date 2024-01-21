@@ -20,7 +20,10 @@ function TopStories() {
 
     if (isPending)
         return (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+                data-testid="top-story-card-skeleton"
+            >
                 {Array.from({ length: 10 }, (_, index) => index + 1).map(
                     (item) => (
                         <div key={item} className="max-w-xs">
@@ -32,11 +35,13 @@ function TopStories() {
         );
 
     if (error)
-        return `An error has occurred when loaded top stories ${error.message}`;
+        return (
+            <div data-testid="topstories-error">{`An error has occurred when loaded top stories ${error.message}`}</div>
+        );
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {data.slice(1, currentPage * 10 + 1).map((id) => (
+            {data.slice(0, currentPage * 10).map((id) => (
                 <TopStory key={id} id={id} />
             ))}
         </div>

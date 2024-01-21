@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import * as routerDom from 'react-router-dom';
 import PaginationElement from './pagination';
 
@@ -16,26 +16,26 @@ test('PaginationElement handles pagination correctly', () => {
         searchParamsMock,
         setSearchParamsMock,
     ]);
-    const { getByTestId } = render(<PaginationElement />);
+    render(<PaginationElement />);
     // Test clicking the previous button when on the first page
-    fireEvent.click(getByTestId('pagination-previous'));
-    expect(getByTestId('pagination-link')).toHaveTextContent('1'); // Assert current page remains 1
+    fireEvent.click(screen.getByTestId('pagination-previous'));
+    expect(screen.getByTestId('pagination-link')).toHaveTextContent('1'); // Assert current page remains 1
 
     expect(setSearchParamsMock).not.toHaveBeenCalled();
 
     // Test clicking the next button
-    fireEvent.click(getByTestId('pagination-next'));
+    fireEvent.click(screen.getByTestId('pagination-next'));
     expect(setSearchParamsMock).toHaveBeenCalledWith(searchParamsMock);
 
     // Test clicking the next button again
-    fireEvent.click(getByTestId('pagination-next'));
+    fireEvent.click(screen.getByTestId('pagination-next'));
     expect(setSearchParamsMock).toHaveBeenCalledWith(searchParamsMock);
 
     // Test clicking the previous button after moving forward
-    fireEvent.click(getByTestId('pagination-previous'));
+    fireEvent.click(screen.getByTestId('pagination-previous'));
     expect(setSearchParamsMock).toHaveBeenCalledWith(searchParamsMock);
 
     // Test clicking the previous button again
-    fireEvent.click(getByTestId('pagination-previous'));
+    fireEvent.click(screen.getByTestId('pagination-previous'));
     expect(setSearchParamsMock).toHaveBeenCalledWith(searchParamsMock);
 });
