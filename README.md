@@ -14,7 +14,7 @@ Currently, two official plugins are available:
 ## Architecture, design points
 
 -   Mobile first, responsive layout approach with Shadcn and TailwindCSS
--   For data fetching, caching, retry logic, etc. I chose [RTK](https://tanstack.com/query/latest)
+-   For data fetching, caching, retry logic, etc. I chose [RTK](https://tanstack.com/query/latest) as it is the most popular
 -   URL as single source of truth:
     -   Specific query can be bookmarked
     -   It is shareable
